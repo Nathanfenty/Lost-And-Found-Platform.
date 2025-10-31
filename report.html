@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Report Lost or Found Item | Lost & Found Platform</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  
+    
+  <header>
+    <nav class="navbar">
+      <div class="logo">Lost & Found Platform</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="lost.html">View Lost Items</a></li>
+        <li><a href="found.html">View Found Items</a></li>
+        <li><a href="report.html" class="active">Report Item</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  
+  
+  <section class="report-section">
+    <div class="report-container">
+      <h1>Report Lost or Found Item</h1>
+      <p>Please select the correct category below and fill in the form accurately.</p>
+
+      <div class="report-tabs">
+        <button class="report-tab active" id="lostBtn">Report Lost Item</button>
+        <button class="report-tab" id="foundBtn">Report Found Item</button>
+      </div>
+
+      
+      <form id="lostForm" class="report-form active">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="text" placeholder="Item Name (e.g., Phone, Bag)" required>
+        <input type="text" placeholder="Where You Lost It" required>
+        <textarea placeholder="Describe the item (color, brand, etc.)" required></textarea>
+        <button type="submit" class="btn black">Submit Lost Report</button>
+      </form>
+
+
+      <form id="foundForm" class="report-form">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="text" placeholder="Item Found (e.g., Wallet, ID)" required>
+        <input type="text" placeholder="Where You Found It" required>
+        <textarea placeholder="Describe the item and condition" required></textarea>
+        <button type="submit" class="btn yellow">Submit Found Report</button>
+      </form>
+    </div>
+  </section>
+
+ 
+  <footer>
+    <p>© 2025 Lost & Found Platform. All rights reserved.</p>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/a2e0ad6b2f.js" crossorigin="anonymous"></script>
+
+  <script>
+    const lostBtn = document.getElementById("lostBtn");
+    const foundBtn = document.getElementById("foundBtn");
+    const lostForm = document.getElementById("lostForm");
+    const foundForm = document.getElementById("foundForm");
+
+    lostBtn.onclick = () => {
+      lostBtn.classList.add("active");
+      foundBtn.classList.remove("active");
+      lostForm.classList.add("active");
+      foundForm.classList.remove("active");
+    };
+
+    foundBtn.onclick = () => {
+      foundBtn.classList.add("active");
+      lostBtn.classList.remove("active");
+      foundForm.classList.add("active");
+      lostForm.classList.remove("active");
+    };
+  </script>
+
+</body>
+</html>
